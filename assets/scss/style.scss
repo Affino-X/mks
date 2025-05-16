@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto";
+  color: rgba(38, 37, 36, 1);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+p {
+  font-size: 13px;
+}
+
+.ellipse-blur {
+  border-radius: 50%;
+  background: rgba(242, 185, 12, 1);
+  filter: blur(300px);
+  width: 168px;
+  height: 488px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+@import "contact-bar";
+@import "promo";
+@import "company-info";
+@import "technical-documentation";
+@import "work-stages";
+@import "services";
+@import "benefits";
+@import "consulation";
+@import "guarantee";
+@import "partners";
+@import "projects";
+@import "footer";

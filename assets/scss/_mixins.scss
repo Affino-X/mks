@@ -1,0 +1,12 @@
+@mixin input-style {
+  border: none;
+  height: 48px;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 240px;
+  font-size: 14px;
+  padding-left: 20px;
+  outline: none;
+  &::placeholder {
+    color: rgba(43, 42, 41, 1);
+  }
+}

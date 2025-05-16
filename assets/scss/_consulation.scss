@@ -1,0 +1,56 @@
+@use "mixins" as *;
+
+.consulation {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 112px;
+  max-width: 1128px;
+  height: 397px;
+  background: rgba(255, 246, 147, 1);
+  border-radius: 24px;
+  padding: 75px 0 0 96px;
+  &::after {
+    content: url("/assets/images/clip-path-consulation.svg");
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  // .consulation__title
+
+  &__title {
+    font-size: 48px;
+    line-height: 57.6px;
+    max-width: 480px;
+    margin-bottom: 12px;
+  }
+
+  // .consulation__subtitle
+
+  &__subtitle {
+    font-size: 17px;
+    line-height: 25.2px;
+    max-width: 480px;
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: 1fr 337px 1fr;
+    column-gap: 6px;
+    margin-top: 23px;
+    max-width: 742px;
+  }
+
+  &__input {
+    @include input-style;
+  }
+
+  &__button {
+    font-size: 14px;
+    color: #fff;
+    background: rgba(38, 37, 36, 1);
+    border-radius: 240px;
+    height: 48px;
+    margin-left: 9px;
+  }
+}

@@ -1,0 +1,106 @@
+.benefits {
+  margin: 0 auto;
+  margin-top: 111px;
+  max-width: 936px;
+  &__title {
+    font-size: 34px;
+    line-height: 40.32px;
+    font-weight: 400;
+    margin-bottom: 16px;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-rows: 348px 348px;
+    gap: 36px;
+  }
+}
+
+.quote {
+  position: relative;
+  display: grid;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+    border-radius: 24px;
+  }
+  &__title {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 30.24px;
+    grid-row: 1;
+    grid-column: 2;
+    color: inherit;
+  }
+  &__excerpt {
+    grid-row: 2;
+    grid-column: 2;
+    font-size: 13px;
+    line-height: 19.8px;
+    color: inherit;
+  }
+
+  & &__icon {
+    width: auto;
+    height: auto;
+    margin-top: 5px;
+    grid-row: 1;
+    grid-column: 1;
+    border-radius: initial;
+  }
+
+  &--left {
+    &::after {
+      content: url("/assets/images/clip-path-quote-top.svg");
+      position: absolute;
+      right: 261px;
+    }
+    &::before {
+      content: url("/assets/images/clip-path-quote-top-second.svg");
+      position: absolute;
+      right: 300px;
+      z-index: 1;
+    }
+    grid-template-columns: 1fr 396px;
+    .quote__left {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      grid-template-rows: max-content;
+      column-gap: 36px;
+      row-gap: 14px;
+      background: rgba(255, 246, 147, 1);
+      border-radius: 24px 0 0 24px;
+      padding-top: 60px;
+      padding-left: 48px;
+      padding-right: 25px;
+      padding-bottom: 50px;
+    }
+    .quote__right {
+    }
+  }
+  &--right {
+    color: #fff;
+    grid-template-columns: 396px 1fr;
+    &::before {
+      content: url("/assets/images/clip-path-quote-bottom.svg");
+      position: absolute;
+      left: 260px;
+    }
+    .quote__left {
+      overflow: hidden;
+    }
+    .quote__right {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      grid-template-rows: max-content;
+      column-gap: 36px;
+      background: rgba(89, 88, 87, 1);
+      border-radius: 0 24px 24px 0;
+      padding-top: 66px;
+      padding-right: 71px;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.technical-documentation {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1128px;
+  height: 384px;
+  background: rgba(89, 88, 87, 1);
+  border-radius: 24px;
+  margin: 0 auto;
+  margin-top: 107px;
+  padding: 0 72px;
+
+  &__title {
+    color: #fff;
+    font-size: 34px;
+    line-height: 38px;
+    font-weight: 400;
+    max-width: 368px;
+    width: 100%;
+  }
+
+  &__list {
+    display: grid;
+    gap: 15px;
+    max-width: 408px;
+    width: 100%;
+    padding: 25px 0 22px;
+  }
+
+  &__item {
+    position: relative;
+    background: rgba(242, 185, 12, 1);
+    border-radius: 18px;
+    padding: 11px 25px 9px 19px;
+    height: 76px;
+    h3 {
+      color: rgba(89, 88, 87, 1);
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    span {
+      color: rgba(255, 255, 255, 1);
+      line-height: 15px;
+      font-size: 13px;
+      font-weight: 400;
+    }
+    &::after {
+      content: url("/assets/images/inset_tech-doc.svg");
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+    }
+  }
+
+  &__masked {
+    position: absolute;
+    left: 391px;
+  }
+
+  &__icon {
+    position: absolute;
+    top: -8px;
+    right: 4px;
+    width: 60px;
+    z-index: 2;
+  }
+}
