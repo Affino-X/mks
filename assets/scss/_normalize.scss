@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-
 * {
   padding: 0;
   margin: 0;
@@ -28,6 +26,11 @@ button {
   outline: none;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
 p {
   font-size: 13px;
 }
@@ -48,16 +51,3 @@ h5,
 h6 {
   font-weight: 400;
 }
-
-@import "contact-bar";
-@import "promo";
-@import "company-info";
-@import "technical-documentation";
-@import "work-stages";
-@import "services";
-@import "benefits";
-@import "consulation";
-@import "guarantee";
-@import "partners";
-@import "projects";
-@import "footer";

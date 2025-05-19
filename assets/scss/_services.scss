@@ -1,8 +1,15 @@
+@use "mixins" as *;
+@use "variables" as *;
+
 .services {
   max-width: 1128px;
   margin: 0 auto;
   margin-top: 110px;
   color: #fff;
+  // @include maxWidthAdapt;
+  @include respond-max($desktop-large) {
+    max-width: 890px;
+  }
   &__title {
     font-weight: 700;
     font-size: 34px;

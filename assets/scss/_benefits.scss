@@ -1,18 +1,28 @@
+@use "mixins" as *;
+@use "variables" as *;
+
 .benefits {
   margin: 0 auto;
   margin-top: 111px;
   max-width: 936px;
+  @include maxWidthAdapt;
   &__title {
     font-size: 34px;
     line-height: 40.32px;
     font-weight: 400;
     margin-bottom: 16px;
+    @include respond-max($desktop-large) {
+      margin-bottom: 40px;
+    }
   }
 
   &__container {
     display: grid;
     grid-template-rows: 348px 348px;
     gap: 36px;
+    @include respond-max($desktop-large) {
+      grid-template-rows: auto;
+    }
   }
 }
 
@@ -26,6 +36,10 @@
     object-fit: cover;
     object-position: left;
     border-radius: 24px;
+    @include respond-max($desktop-large) {
+      border-radius: 24px 24px 0 0;
+      height: 300px;
+    }
   }
   &__title {
     font-weight: 400;
@@ -57,12 +71,19 @@
       content: url("/assets/images/clip-path-quote-top.svg");
       position: absolute;
       right: 261px;
+      height: 110%;
+      @include respond-max($desktop-large) {
+        display: none;
+      }
     }
     &::before {
       content: url("/assets/images/clip-path-quote-top-second.svg");
       position: absolute;
       right: 300px;
       z-index: 1;
+      @include respond-max($desktop-large) {
+        display: none;
+      }
     }
     grid-template-columns: 1fr 396px;
     .quote__left {
@@ -77,8 +98,16 @@
       padding-left: 48px;
       padding-right: 25px;
       padding-bottom: 50px;
+      @include respond-max($desktop-large) {
+        border-radius: 0 0 24px 24px;
+        padding: 50px;
+        grid-row: 2;
+      }
     }
     .quote__right {
+    }
+    @include respond-max($desktop-large) {
+      grid-template-columns: 1fr;
     }
   }
   &--right {
@@ -88,6 +117,9 @@
       content: url("/assets/images/clip-path-quote-bottom.svg");
       position: absolute;
       left: 260px;
+      @include respond-max($desktop-large) {
+        display: none;
+      }
     }
     .quote__left {
       overflow: hidden;
@@ -101,6 +133,14 @@
       border-radius: 0 24px 24px 0;
       padding-top: 66px;
       padding-right: 71px;
+      @include respond-max($desktop-large) {
+        border-radius: 0 0 24px 24px;
+        // grid-row: ;
+        padding: 50px;
+      }
+    }
+    @include respond-max($desktop-large) {
+      grid-template-columns: 1fr;
     }
   }
 }

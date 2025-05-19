@@ -1,17 +1,30 @@
 @use "mixins" as *;
+@use "variables" as *;
 
 .work-stages {
   display: grid;
   grid-template-columns: 690px 1fr 1fr;
   width: 100%;
-  height: 941px;
+  min-height: 941px;
   background: rgba(242, 185, 12, 1);
   margin-top: 112px;
   padding-top: 94px;
-
+  padding-bottom: 94px;
+  @include respond-max($desktop-large) {
+    grid-template-columns: 1fr;
+    row-gap: 90px;
+  }
+  @include respond-max($desktop-large) {
+  }
   &__right {
     grid-column: 3;
     margin-right: 15vw;
+
+    @include respond-max($desktop-large) {
+      grid-row: 2;
+      grid-column: 1;
+      margin: 0 auto;
+    }
   }
   &__hero {
     position: relative;
@@ -26,6 +39,10 @@
     position: absolute;
     right: 0;
     max-width: 300px;
+    @include respond-max($desktop-large) {
+      position: absolute;
+      left: 403px;
+    }
   }
 
   &__image {
@@ -34,6 +51,7 @@
       content: url("/assets/images/clip-path-work-stages.png");
       position: absolute;
       left: 334px;
+      top: 0;
     }
   }
 
@@ -84,6 +102,9 @@
     gap: 30px;
     flex-direction: column;
     width: 352px;
+    @include respond-max($desktop-large) {
+      // flex-direction: row;
+    }
   }
 
   &__icon-container {

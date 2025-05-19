@@ -1,21 +1,22 @@
 @use "mixins" as *;
+@use "variables" as *;
 
 .consulation {
   position: relative;
   margin: 0 auto;
   margin-top: 112px;
   max-width: 1128px;
-  height: 397px;
+  min-height: 397px;
   background: rgba(255, 246, 147, 1);
   border-radius: 24px;
-  padding: 75px 0 0 96px;
+  padding: 75px 60px 0 96px;
   &::after {
     content: url("/assets/images/clip-path-consulation.svg");
     position: absolute;
     top: 0;
     right: 0;
   }
-
+  @include maxWidthAdapt;
   // .consulation__title
 
   &__title {
