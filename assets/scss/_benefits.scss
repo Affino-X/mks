@@ -6,13 +6,19 @@
   margin-top: 111px;
   max-width: 936px;
   @include maxWidthAdapt;
+  @include respond-max($mobile) {
+    max-width: 100%;
+  }
   &__title {
-    font-size: 34px;
+    font-size: 2.615rem;
     line-height: 40.32px;
     font-weight: 400;
     margin-bottom: 16px;
     @include respond-max($desktop-large) {
       margin-bottom: 40px;
+    }
+    @include respond-max($tablet) {
+      text-align: center;
     }
   }
 
@@ -22,6 +28,9 @@
     gap: 36px;
     @include respond-max($desktop-large) {
       grid-template-rows: auto;
+    }
+    @include respond-max($mobile) {
+      gap: 0;
     }
   }
 }
@@ -40,10 +49,13 @@
       border-radius: 24px 24px 0 0;
       height: 300px;
     }
+    @include respond-max($mobile) {
+      border-radius: 0;
+    }
   }
   &__title {
     font-weight: 400;
-    font-size: 22px;
+    font-size: 1.692rem;
     line-height: 30.24px;
     grid-row: 1;
     grid-column: 2;
@@ -52,7 +64,7 @@
   &__excerpt {
     grid-row: 2;
     grid-column: 2;
-    font-size: 13px;
+    font-size: 1rem;
     line-height: 19.8px;
     color: inherit;
   }
@@ -64,6 +76,10 @@
     grid-row: 1;
     grid-column: 1;
     border-radius: initial;
+    @include respond-max($tablet) {
+      width: 60px;
+      height: 40px;
+    }
   }
 
   &--left {
@@ -103,6 +119,16 @@
         padding: 50px;
         grid-row: 2;
       }
+      @include respond-max($tablet) {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+        grid-template-rows: auto;
+        display: flex;
+        flex-direction: column;
+      }
+      @include respond-max($mobile) {
+        border-radius: 0;
+      }
     }
     .quote__right {
     }
@@ -137,6 +163,17 @@
         border-radius: 0 0 24px 24px;
         // grid-row: ;
         padding: 50px;
+      }
+      @include respond-max($tablet) {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+        grid-template-rows: auto;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+      }
+      @include respond-max($mobile) {
+        border-radius: 0;
       }
     }
     @include respond-max($desktop-large) {

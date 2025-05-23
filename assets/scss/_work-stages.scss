@@ -14,7 +14,8 @@
     grid-template-columns: 1fr;
     row-gap: 90px;
   }
-  @include respond-max($desktop-large) {
+  @include respond-max($mobile) {
+    margin-top: 0;
   }
   &__right {
     grid-column: 3;
@@ -29,10 +30,14 @@
   &__hero {
     position: relative;
     display: flex;
+    @include respond-max($tablet) {
+      flex-direction: column;
+      gap: 30px;
+    }
   }
 
   &__title {
-    font-size: 34px;
+    font-size: 2.615rem;
     font-weight: 400;
     line-height: 40.32px;
     z-index: 2;
@@ -43,15 +48,39 @@
       position: absolute;
       left: 403px;
     }
+    @include respond-max($tablet) {
+      position: static;
+      order: -1;
+      max-width: 600px;
+      text-align: center;
+    }
   }
 
   &__image {
     position: relative;
+    width: 438px;
+    height: 477px;
+    overflow: hidden;
+    border-radius: 0 0 24px 0;
+    @include respond-max($tablet) {
+      width: 100%;
+      border-radius: 0;
+    }
+    img {
+      height: 100%;
+      object-fit: cover;
+      object-position: right;
+      transform: scaleX(-1);
+    }
     &::after {
       content: url("/assets/images/clip-path-work-stages.png");
       position: absolute;
       left: 334px;
       top: 0;
+
+      @include respond-max($tablet) {
+        display: none;
+      }
     }
   }
 
@@ -59,8 +88,11 @@
     margin-left: 34px;
     margin-top: 27px;
     h4 {
-      font-size: 22px;
+      font-size: 1.692rem;
       font-weight: 400;
+    }
+    @include respond-max($tablet) {
+      margin: 20px 30px;
     }
   }
 
@@ -76,7 +108,7 @@
   &__button {
     width: 139px;
     height: 48px;
-    font-size: 14px;
+    font-size: 1.077rem;
     color: #fff;
     background: rgba(38, 37, 36, 1);
     border-radius: 240px;
@@ -84,7 +116,7 @@
 
   &__input {
     @include input-style;
-
+    width: 100%;
     &:nth-child(1) {
       grid-row: 1;
       grid-column: span 2;
@@ -119,13 +151,13 @@
     grid-template-columns: 60px 1fr;
     column-gap: 24px;
     h3 {
-      font-size: 22px;
+      font-size: 1.692rem;
       grid-column: 2;
       margin-top: 7px;
       margin-bottom: 8px;
     }
     p {
-      font-size: 14px;
+      font-size: 1.077rem;
       line-height: 19.8px;
       grid-column: 2;
     }

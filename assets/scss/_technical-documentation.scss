@@ -22,14 +22,32 @@
     justify-content: center;
     max-width: 75%;
   }
+
+  @media (max-width: $desktop) {
+    padding: 60px 30px;
+  }
+  @include respond-max($tablet) {
+    max-width: 100%;
+    border-radius: initial;
+    gap: 20px;
+  }
   &__title {
     color: #fff;
-    font-size: 34px;
+    font-size: 2.615rem;
     line-height: 38px;
     font-weight: 400;
     max-width: 368px;
     @media (max-width: $desktop-large) {
       max-width: 70%;
+    }
+    @include respond-max($desktop) {
+      width: 100%;
+    }
+
+    @include respond-max($mobile) {
+      font-size: 1.8rem;
+      line-height: 1.2;
+      max-width: 99%;
     }
   }
 
@@ -56,14 +74,14 @@
     }
     h3 {
       color: rgba(89, 88, 87, 1);
-      font-size: 16px;
+      font-size: 1.231rem;
       font-weight: 700;
     }
 
     span {
       color: rgba(255, 255, 255, 1);
       line-height: 15px;
-      font-size: 13px;
+      font-size: 1rem;
       font-weight: 400;
     }
     &::after {

@@ -13,17 +13,27 @@
   @include respond-max($desktop-large) {
     grid-template-columns: 1fr;
     row-gap: 50px;
-    min-height: 477px;
+    height: auto;
+  }
+  @include respond-max($mobile) {
+    max-width: 100%;
   }
   &__title {
-    font-size: 34px;
+    font-size: 2.615rem;
     line-height: 40.32px;
     margin-bottom: 25px;
+    @include respond-max($desktop-large) {
+      text-align: center;
+    }
   }
   &__list {
     display: grid;
     grid-template-columns: 458px;
     row-gap: 23px;
+    @include respond-max($desktop-large) {
+      grid-template-columns: 80%;
+      place-content: center;
+    }
   }
   &__item {
     position: relative;
@@ -32,11 +42,20 @@
     padding-left: 19px;
     padding-top: 17px;
     padding-right: 40px;
-    font-size: 16px;
+    font-size: 1.231rem;
     color: #fff;
     font-weight: 700;
     line-height: 19.8px;
     height: 76px;
+
+    @include respond-max($tablet) {
+      height: auto;
+      padding-bottom: 10px;
+    }
+
+    @include respond-max($mobile) {
+      padding: 25px;
+    }
 
     &::after {
       content: url("/assets/images/clip-path-guarantee.svg");
@@ -44,6 +63,14 @@
       top: 0px;
       right: 0px;
       object-fit: cover;
+      @include respond-max($mobile) {
+        display: none;
+      }
+    }
+  }
+
+  &__left {
+    @include respond-max($desktop-large) {
     }
   }
 
@@ -61,6 +88,14 @@
     object-fit: cover;
     object-position: bottom;
     border-radius: 24px;
+    @include respond-max($desktop-large) {
+      width: 100%;
+      max-height: 800px;
+    }
+
+    @include respond-max($mobile) {
+      border-radius: 0;
+    }
   }
 
   &__masked {
@@ -69,5 +104,8 @@
     right: 358px;
     object-position: right;
     min-height: 101%;
+    @include respond-max($desktop-large) {
+      display: none;
+    }
   }
 }

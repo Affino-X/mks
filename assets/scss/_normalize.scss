@@ -4,6 +4,19 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 13px;
+  @media (max-width: 992px) {
+    font-size: 13px;
+  }
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
+}
+
 body {
   font-family: "Roboto";
   color: rgba(38, 37, 36, 1);
@@ -41,6 +54,9 @@ p {
   filter: blur(300px);
   width: 168px;
   height: 488px;
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 h1,
@@ -50,4 +66,37 @@ h4,
 h5,
 h6 {
   font-weight: 400;
+}
+
+/* Контейнер слайдера */
+.swiper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Обёртка всех слайдов */
+.swiper-wrapper {
+  display: flex;
+  max-width: 1200px;
+}
+
+/* Каждый отдельный слайд */
+.swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+/* Убираем нежелательные отступы у слайдов */
+.swiper-slide {
+  margin: 0;
+  padding: 0;
+}
+
+/* Если внутри .swiper-slide есть контент — например, карточки */
+.swiper-slide > * {
+  width: 100%;
+  height: 100%;
 }
